@@ -1,0 +1,87 @@
+AllCops:
+  Includes:
+    - Rakefile
+    - config.ru
+  Excludes:
+    - db/**
+    - config/**
+    - script/**
+
+LineLength:
+  Description: 'Limit lines to 120 characters.'
+  Max: 120
+  Enabled: true
+
+StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/FindEach:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/RequestReferer:
+  Enabled: true
+  EnforcedStyle: referrer
+
+Rails/ScopeArgs:
+  Enabled: true
+
+Rails/UniqBeforePluck:
+  Enabled: true
+
+GitHub/RailsApplicationRecord:
+  Enabled: true
+
+
+# Exclude Rails haml files from incompatible cops
+
+Lint/BlockAlignment:
+  Exclude:
+    - 'app/views/**/*.haml'
+
+Style/For:
+  Exclude:
+    - 'app/views/**/*.haml'
+
+Style/OneLineConditional:
+  Exclude:
+    - 'app/views/**/*.haml'
+
+Style/Semicolon:
+  Exclude:
+    - 'app/views/**/*.haml'
+
+Style/SpaceInsideParens:
+  Exclude:
+    - 'app/views/**/*.haml'
+
+Style/StringLiterals:
+  Exclude:
+    - 'app/views/**/*.haml'
+
+Style/TrailingBlankLines:
+  Exclude:
+    - 'app/views/**/*.haml'
+
+Style/TrailingWhitespace:
+  Exclude:
+    - 'app/views/**/*.haml'
