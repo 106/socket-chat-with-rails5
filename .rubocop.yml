@@ -8,6 +8,10 @@ AllCops:
     - db/**
     - config/**
     - script/**
+    - Gemfile.lock
+
+Style/FileName:
+  Enabled: false
 
 LineLength:
   Description: 'Limit lines to 120 characters.'
