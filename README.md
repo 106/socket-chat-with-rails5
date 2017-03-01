@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/106/socket-chat-with-rails5/badges/gpa.svg)](https://codeclimate.com/github/106/socket-chat-with-rails5)
 # README
 
 This README would normally document whatever steps are necessary to get the
