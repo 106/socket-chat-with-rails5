@@ -1,1 +1,3 @@
-= @messages.count
+%ul
+  - @messages.each do |message|
+    %li= message.body
