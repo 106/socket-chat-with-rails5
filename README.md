@@ -1,25 +1,17 @@
 [![Code Climate](https://codeclimate.com/github/106/socket-chat-with-rails5/badges/gpa.svg)](https://codeclimate.com/github/106/socket-chat-with-rails5)
-# README
+# Chat with rails5
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Readme will be provided when application configuration will be finished
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###Rubocop
+Rubocop will check all updated files to reduce code review time and force developers to follow Ruby on Rails Guidelines.
+###Overcommit
+To run overcommit please run
+```bash
+$ overcommit --install
+```
+to add hooks to repo.
+And add signature with
+```bash
+$ overcommit --sign
+```
