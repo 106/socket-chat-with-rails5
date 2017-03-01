@@ -35,10 +35,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'overcommit'
 gem 'rails_config', '0.4.2'
 gem 'rubocop', require: false
 gem 'rubocop-rspec'
-gem 'overcommit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +47,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'rails-controller-testing'
   gem 'rspec-its'
   gem 'rspec-rails', '~> 3.5'
 end
