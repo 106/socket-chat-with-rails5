@@ -5,6 +5,7 @@ AllCops:
     - Rakefile
     - config.ru
   Excludes:
+    - app/assets/**
     - db/**
     - config/**
     - script/**
