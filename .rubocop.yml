@@ -5,9 +5,14 @@ AllCops:
     - Rakefile
     - config.ru
   Excludes:
+    - app/assets/**
     - db/**
     - config/**
     - script/**
+    - Gemfile.lock
+
+Style/FileName:
+  Enabled: false
 
 LineLength:
   Description: 'Limit lines to 120 characters.'

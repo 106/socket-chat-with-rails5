@@ -1,0 +1,9 @@
+%ul
+  - @messages.each do |message|
+    %li= message.body
+
+%form
+  %input#message_input{ autofocus: true }
+  %input#author_id{ type: 'hidden', value: '1' }
+
+%h6#someone_typing
