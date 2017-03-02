@@ -3,7 +3,7 @@ module ApplicationCable
     identified_by :current_user
 
     def connect
-      self.current_user = { name: Faker::Name.name, id: Time.now.to_i }
+      self.current_user = User.find_by(name: cookies[:user_id])
     end
   end
 end
