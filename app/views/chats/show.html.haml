@@ -1,9 +1,9 @@
+%p#users_online
 %ul
   - @messages.each do |message|
     %li= message.body
 
 %form
-  %input#message_input{ autofocus: true }
-  %input#author_id{ type: 'hidden', value: '1' }
+  %input#message_input{ maxlength: "140" }
 
 %h6#someone_typing

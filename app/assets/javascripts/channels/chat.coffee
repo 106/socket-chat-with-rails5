@@ -5,11 +5,11 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
   disconnected: ->
     # Called when the subscription has been terminated by the server
 
-  send_message: (message, author_id) ->
+  send_message: (message) ->
     @perform 'send_message', message: message
 
-  typing: (author_id) ->
-    @perform 'typing', author_id: author_id
+  typing: ->
+    @perform 'typing'
 
   stop_typing: ->
     @perform 'stop_typing'
@@ -24,6 +24,8 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
       when 'send_message'
         $('#someone_typing').hide()
         $('ul').append '<li>' + action['message']['body'] + '</li>'
+      when 'users_online'
+        $('#users_online').text( action['data'].join(', ') )
       else
         console.log action
         console.log data
