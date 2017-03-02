@@ -9,11 +9,11 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def send_message(data)
-    MessageBroadcasterJob.perform_now data
+    MessageBroadcasterJob.perform_now(data, connection.current_user.id)
   end
 
   def typing
-    ActionCable.server.broadcast 'chat_channel', action: 'typing', user_name: connection.current_user[:name]
+    ActionCable.server.broadcast 'chat_channel', action: 'typing', user_name: connection.current_user.name
   end
 
   def stop_typing
@@ -27,6 +27,6 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def online_users
-    connections_list.map { |x| x.current_user[:name] }
+    connections_list.map { |x| x.current_user.name }
   end
 end

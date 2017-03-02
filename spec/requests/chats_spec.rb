@@ -1,6 +1,7 @@
 describe 'ChatsController', type: :request do
   describe 'GET /chat' do
     before do
+      cookies['user_id'] = '1'
       get chat_path
     end
 
