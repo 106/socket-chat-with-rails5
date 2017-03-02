@@ -47,6 +47,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-its'
   gem 'rspec-rails', '~> 3.5'
