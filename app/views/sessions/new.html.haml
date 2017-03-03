@@ -1,4 +1,19 @@
-= form_for @user, url: 'sessions' do |f|
-  = f.text_field :name
-  = f.select :dialect_id, options_for_select(Dialect.all.map { |x| [x.name, x.id] })
-  = f.submit 'Sign in'
+.row
+  .col.s3
+  .center-align
+    .col.s6
+      %h2 Please login to continue:
+      = form_for @user, url: 'sessions' do |f|
+        .input-field
+          = f.text_field :name
+          = f.label :name
+        .input-field
+          = f.select :dialect_id, options_for_select(Dialect.all.map { |x| [x.name, x.id] })
+          = f.label :dialect
+        = f.submit 'Sign in', class: 'btn'
+
+
+:javascript
+  $(document).ready(function(){
+    $('select').material_select();
+  });

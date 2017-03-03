@@ -14,3 +14,8 @@
     .card-panel.hoverable#users_online
       =render 'users', users: []
   .col.s1
+
+:javascript
+  $(document).ready(function(){
+    $('#messages_container').scrollTop($('#messages_container')[0].scrollHeight);
+  });
