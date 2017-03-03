@@ -1,5 +1,6 @@
 describe SessionsController, type: :controller do
   subject { response }
+  let(:dialect) { create :dialect }
 
   describe 'GET new' do
     before do
@@ -15,15 +16,15 @@ describe SessionsController, type: :controller do
 
   describe 'POST create' do
     subject do
-      post(:create, params: { user: { name: 'Tarantino' } })
+      post(:create, params: { user: { name: 'Tarantino', dialect_id: dialect.id } })
       response
     end
     it 'set cookies' do
-      post(:create, params: { user: { name: 'Tarantino' } })
+      post(:create, params: { user: { name: 'Tarantino', dialect_id: dialect.id } })
       expect(response.cookies['user_id']).to eq 'Tarantino'
     end
     it 'creates user' do
-      expect { post(:create, params: { user: { name: 'Tarantino' } }) }.to change { User.count }.from(0).to(1)
+      expect { post(:create, params: { user: { name: 'Tarantino', dialect_id: dialect.id } }) }.to change { User.count }.from(0).to(1)
     end
     it { is_expected.to have_http_status(302) }
     it { is_expected.to redirect_to(chat_path) }

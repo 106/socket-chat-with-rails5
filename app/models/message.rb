@@ -4,7 +4,7 @@ class Message < ApplicationRecord
   validates :body, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
 
-  before_validation :translate_to_dialect
+  before_save :translate_to_dialect
 
   delegate :dialect, to: :user
 
