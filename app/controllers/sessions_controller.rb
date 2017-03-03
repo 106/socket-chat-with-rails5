@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :dialect_id)
   end
 end
