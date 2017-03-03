@@ -3,4 +3,12 @@ class Message < ApplicationRecord
 
   validates :body, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
+
+  before_validation :translate_to_dialect
+
+  delegate :dialect, to: :user
+
+  def translate_to_dialect
+    self.body = Translator::Degraeve.new(body, dialect.name).translate!
+  end
 end
