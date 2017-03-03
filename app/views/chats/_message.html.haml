@@ -1,0 +1,10 @@
+.section.row
+  .col.s1
+    .avatar
+      %b.title= message.user.name
+  .col.s9
+    = message.body
+  .col.s2
+    %span.grey-text.lighten-2=l message.created_at, format: :short
+
+.divider

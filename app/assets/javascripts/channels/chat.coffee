@@ -23,7 +23,8 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
         $('#someone_typing').hide()
       when 'send_message'
         $('#someone_typing').hide()
-        $('ul').append '<li>' + action['message']['body'] + '</li>'
+        $('#messages_container').append '<li>' + action['message']['body'] + '</li>'
+        $('#messages_container').scrollTop($('#messages_container')[0].scrollHeight);
       when 'users_online'
         $('#users_online').text( action['data'].join(', ') )
       else
