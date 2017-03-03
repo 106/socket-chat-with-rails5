@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+  $('#messages_container').scrollTop($('#messages_container')[0].scrollHeight);
+})

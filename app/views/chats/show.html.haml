@@ -10,15 +10,7 @@
         %form
           %input#message_input{ maxlength: "140" }
           %h6#someone_typing
-
   .col.s3
-    .card-panel.hoverable
-      %ul.collection
-        %li.collection-item.avatar
-          %i.material-icons.circle.green face
-          %span.title User1
-        %li.collection-item.avatar
-          %i.material-icons.circle.green face
-          %span.title User2
-      %p#users_online
+    .card-panel.hoverable#users_online
+      =render 'users', users: []
   .col.s1
