@@ -1,11 +1,16 @@
-%p#users_online
-%ul
-  - @messages.each do |message|
-    %li= message.body
-
-%form
-  %input#message_input{ maxlength: "140" }
-
-%h6#someone_typing
-
-= link_to 'Sign out', sign_out_path
+.row
+  .col.s1
+  .col.s7.grey.lighten-5
+    .section#messages_container
+      - @messages.each do |message|
+        =render 'message', message: message
+    .section
+      .card-panel.hoverable
+        %h5 New message
+        %form
+          %input#message_input{ maxlength: "140" }
+          %h6#someone_typing
+  .col.s3
+    .card-panel.hoverable#users_online
+      =render 'users', users: []
+  .col.s1

@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'materialize-sass'
+gem 'material_icons'
 gem 'overcommit'
 gem 'rails_config', '0.4.2'
 gem 'rubocop', require: false

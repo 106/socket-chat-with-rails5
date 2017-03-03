@@ -27,6 +27,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def online_users
-    connections_list.map { |x| x.current_user.name }
+    ApplicationController.renderer.render(partial: 'chats/users',
+                                          locals: { users: connections_list.map(&:current_user) })
   end
 end
